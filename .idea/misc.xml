@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="UnattendedHostPersistenceState">
+    <option name="openedFilesInfos">
+      <list>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="69" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/util.h" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="0" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/util.cpp" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="28" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/ThreadPoll.h" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="518" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/ThreadPoll.cpp" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="345" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/Channel.h" />
+        </OpenedFileInfo>
+      </list>
+    </option>
+  </component>
+</project>
