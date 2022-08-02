@@ -1,14 +1,26 @@
+/******************************
+*   author: yuesong-feng
+*   
+*
+*
+******************************/
+/******************************
+*   author: yuesong-feng
+*   
+*
+*
+******************************/
 #pragma once
 #include <functional>
 
 class Epoll;
 class Channel;
-class ThreadPoll;
+class ThreadPool;
 class EventLoop
 {
 private:
     Epoll *ep;
-    ThreadPoll *threadPoll;
+    ThreadPool *threadPool;
     bool quit;
 public:
     EventLoop();

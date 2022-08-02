@@ -1,9 +1,15 @@
+/******************************
+*   author: yuesong-feng
+*   
+*
+*
+******************************/
 #include "Server.h"
 #include "Socket.h"
 #include "Acceptor.h"
 #include "Connection.h"
+#include <unistd.h>
 #include <functional>
-
 
 Server::Server(EventLoop *_loop) : loop(_loop), acceptor(nullptr){ 
     acceptor = new Acceptor(loop);
@@ -17,14 +23,22 @@ Server::~Server(){
 
 
 void Server::newConnection(Socket *sock){
-    Connection *conn = new Connection(loop, sock);
-    std::function<void(Socket*)> cb = std::bind(&Server::deleteConnection, this, std::placeholders::_1);
-    conn->setDeleteConnectionCallback(cb);
-    connections[sock->getFd()] = conn;
+    if(sock->getFd() != -1){
+        Connection *conn = new Connection(loop, sock);
+        std::function<void(int)> cb = std::bind(&Server::deleteConnection, this, std::placeholders::_1);
+        conn->setDeleteConnectionCallback(cb);
+        connections[sock->getFd()] = conn;
+    }
 }
 
-void Server::deleteConnection(Socket *sock){
-    Connection *conn = connections[sock->getFd()];
-    connections.erase(sock->getFd());
-    delete conn;
+void Server::deleteConnection(int sockfd){
+    if(sockfd != -1){
+        auto it = connections.find(sockfd);
+        if(it != connections.end()){
+            Connection *conn = connections[sockfd];
+            connections.erase(sockfd);
+            // close(sockfd);       //正常
+            delete conn;         //会Segmant fault
+        }
+    }
 }

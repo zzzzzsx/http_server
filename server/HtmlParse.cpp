@@ -1,4 +1,4 @@
-#include "HtmlParse.h"
+#include <HtmlParse.h>
 
 HtmlParse::HtmlParse() {
 }
@@ -13,6 +13,7 @@ std::pair<bool, std::unordered_map<std::string, std::string>> HtmlParse::getHead
         return std::make_pair(false, header);
     }
 }
+
 std::pair<bool, std::string> HtmlParse::getBody() {
     if (illegalRequest) {
         return std::make_pair(true, body);

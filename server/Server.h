@@ -1,5 +1,10 @@
+/******************************
+*   author: yuesong-feng
+*   
+*
+*
+******************************/
 #pragma once
-
 #include <map>
 class EventLoop;
 class Socket;
@@ -17,7 +22,7 @@ public:
 
     void handleReadEvent(int);
     void newConnection(Socket *sock);
-    void deleteConnection(Socket *sock);
+    void deleteConnection(int sockfd);
 };
 
 

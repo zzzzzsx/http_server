@@ -1,0 +1,44 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ 生成活动文件",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-pthread",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-I",
+                "/home/zsx/http_server/server",
+                "/home/zsx/http_server/server/Socket.cpp",
+                "/home/zsx/http_server/server/Acceptor.cpp",
+                "/home/zsx/http_server/server/Buffer.cpp",
+                "/home/zsx/http_server/server/Channel.cpp",
+                "/home/zsx/http_server/server/Connection.cpp",
+                "/home/zsx/http_server/server/Epoll.cpp",
+                "/home/zsx/http_server/server/EventLoop.cpp",
+                "/home/zsx/http_server/server/HtmlParse.cpp",
+                "/home/zsx/http_server/server/InetAddress.cpp",
+                "/home/zsx/http_server/server/Server.cpp",
+                "/home/zsx/http_server/server/ThreadPool.cpp",
+                "/home/zsx/http_server/server/util.cpp"
+
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        }
+    ],
+    "version": "2.0.0"
+}

@@ -1,14 +1,15 @@
+/******************************
+*   author: yuesong-feng
+*   
+*
+*
+******************************/
 #include "Buffer.h"
 #include <string.h>
 #include <iostream>
-Buffer::Buffer()
-{
-}
+Buffer::Buffer() {}
 
-Buffer::~Buffer()
-{
-}
-
+Buffer::~Buffer() {}
 
 void Buffer::append(const char* _str, int _size){
     for(int i = 0; i < _size; ++i){
@@ -32,4 +33,13 @@ void Buffer::clear(){
 void Buffer::getline(){
     buf.clear();
     std::getline(std::cin, buf);
+}
+
+void Buffer::setBuf(const char* _buf){
+    buf.clear();
+    buf.append(_buf);
+}
+
+std::string Buffer::getBuffer(){
+    return buf;
 }

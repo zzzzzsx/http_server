@@ -1,24 +1,34 @@
+/******************************
+*   author: yuesong-feng
+*   
+*
+*
+******************************/
 #pragma once
 #include <functional>
 #include <string>
+#include "HtmlParse.h"
 class EventLoop;
 class Socket;
 class Channel;
 class Buffer;
+class HtmlParse;
 class Connection
 {
 private:
     EventLoop *loop;
     Socket *sock;
     Channel *channel;
-    std::function<void(Socket*)> deleteConnectionCallback;
+    std::function<void(int)> deleteConnectionCallback;
     std::string *inBuffer;
     Buffer *readBuffer;
+    HtmlParse *parse = new HtmlParse;
 public:
     Connection(EventLoop *_loop, Socket *_sock);
     ~Connection();
     
     void echo(int sockfd);
-    void setDeleteConnectionCallback(std::function<void(Socket*)>);
+    void setDeleteConnectionCallback(std::function<void(int)>);
+    void send(int sockfd);
 };
 

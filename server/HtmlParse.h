@@ -27,8 +27,7 @@ private:
     std::string body;
     bool illegalRequest = false;
     std::string response;
-    // HttpMethod method;
-    // HttpStatus status;
+
 
 public:
     HtmlParse();
